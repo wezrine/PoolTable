@@ -2,8 +2,6 @@ from datetime import datetime
 tables = []
 fmt = '%H:%M:%S'
 
-
-
 class PoolTable:
     def __init__(self,number):
         self.number = number
@@ -24,6 +22,9 @@ class PoolTable:
     
     # def total_time(self):
     #     self.time_played = self.end_time - self.start_time
+
+    # def total_time(self):
+    #     self.time_played = datetime.now() - self.start_time
 
     # def time_clear(self):
     #     self.start_time = None
@@ -49,7 +50,7 @@ def check_in_table():
 
     for table in tables:
         if table.is_occupied == True:
-            print(f'Table {table.number} - start: {format_time(table.start_time)}')
+            print(f"Table {table.number} | Start Time: {format_time(table.start_time)} | End Time: {format_time(table.end_time)} | Total Time Played: {format_time(table.time_played)}")
     ask = int(input("Choose a table: "))
     table = tables[ask-1]
     table.check_in()
@@ -61,7 +62,8 @@ for i in range (0,12):
 
 ## MENU ##
 while True:
-    exit = input("\nPOOL TABLE MANAGEMENT SYSTEM\n****************************\nPress [1] to check out a table\nPress [2] to check in a table\n")
+    print("\nPOOL TABLE MANAGEMENT SYSTEM\n****************************\n")
+    exit = input("Press [1] to check out a table\nPress [2] to check in a table\n")
     if exit == "1":
         # Checkout a table
         check_out_table()
