@@ -47,11 +47,13 @@ def check_in_table():
     table = tables[ask-1]
     table.check_in()
     print(f"Table {table.number} - Total Time: {table.total_time()}")
+
 def view_all_tables():
     print("\nALL TABLES:")
     for table in tables:
         print(f"Table {table.number} - Occupied: {table.is_occupied}")
-# creates 12 tables
+
+#  creates 12 tables
 for i in range (0,12):
     table = PoolTable(i+1)
     tables.append(table)
