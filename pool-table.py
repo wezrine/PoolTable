@@ -47,7 +47,10 @@ def check_in_table():
     table = tables[ask-1]
     table.check_in()
     print(f"Table {table.number} - Total Time: {table.total_time()}")
-
+def view_all_tables():
+    print("\nALL TABLES:")
+    for table in tables:
+        print(f"Table {table.number} - Occupied: {table.is_occupied}")
 # creates 12 tables
 for i in range (0,12):
     table = PoolTable(i+1)
@@ -56,11 +59,13 @@ for i in range (0,12):
 ## MENU ##
 while True:
     print("\nPOOL TABLE MANAGEMENT SYSTEM\n****************************\n")
-    exit = input("Press [1] to check out a table\nPress [2] to check in a table\nPress any other key to quit\n\n")
+    exit = input("Press [1] to check out a table\nPress [2] to check in a table\nPress [3] to view all tables\nPress any other key to quit\n\n")
     if exit == "1": # Check out a table
         check_out_table()
     elif exit == "2": # Check in a table
         check_in_table()
+    elif exit == "3":
+        view_all_tables()
     else:
         break
 
