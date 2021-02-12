@@ -1,12 +1,12 @@
-#1 - START: Time not started - END: Time not started
-#2 - START: 15:36:36 - END: Time not started
-#3 - START: Time not started - END: Time not started
-#4 - START: Time not started - END: Time not started
-#5 - START: Time not started - END: Time not started
-#6 - START: Time not started - END: Time not started
-#7 - START: Time not started - END: Time not started
-#8 - START: Time not started - END: Time not started
-#9 - START: Time not started - END: Time not started
-#10 - START: Time not started - END: Time not started
-#11 - START: Time not started - END: Time not started
-#12 - START: Time not started - END: Time not started
+#1 | START: 16:13:33 | END: N/A | TIME PLAYED: None | COST: 1.0
+#2 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
+#3 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
+#4 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
+#5 | START: 16:13:34 | END: N/A | TIME PLAYED: None | COST: 1.0
+#6 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
+#7 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
+#8 | START: 16:13:36 | END: N/A | TIME PLAYED: None | COST: 1.0
+#9 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
+#10 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
+#11 | START: 16:13:41 | END: N/A | TIME PLAYED: None | COST: 1.0
+#12 | START: N/A | END: N/A | TIME PLAYED: None | COST: 0.0
