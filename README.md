@@ -1,8 +1,8 @@
-Assignment - Pool Table Project
+# Assignment - Pool Table Project
 
 The goal of this project was to create a pool table management app which will manage the pool tables in a university games room.
 
-Requested Features:
+# Requested Features:
 
 - Admin should be able to see all tables (12)
 - Should show whether table is OCCUPIED or NOT OCCUPIED
