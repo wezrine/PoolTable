@@ -2,38 +2,7 @@ from datetime import datetime
 import json
 tables = []
 fmt = '%S'
-
-# open json file
-# # ???? How can I open the .json before???
-# with open("11-22-2017.json","r") as file_object:
-#     tables = json.load(file_object)
-
-
-class PoolTable:
-    def __init__(self,number):
-        self.number = number
-        self.is_occupied = False
-        self.start_time = None
-        self.end_time = None
-        self.time_played = None
-
-    def check_out(self):
-        self.start_time = datetime.now()
-        self.end_time = None
-        self.is_occupied = True
-    
-    def check_in(self):
-        self.end_time = datetime.now()
-        self.is_occupied = False
-    
-    def total_time(self):
-        return self.end_time - self.start_time
-    
-    # def current_time(self):
-    #     return datetime() - self.start_time
-    
-    # def cost_of_table(self):
-    #     return 30 * self.end_time - self.start_time
+from pool_table_class import PoolTable
 
 def format_time(dt):
     if dt == None:
@@ -52,7 +21,7 @@ def check_out_table():
         print(f"Pool Table {table.number} is currently occupied")
     else:
         table.check_out()
-        #print(table.total_time())
+        print(table.total_time())
 
 def check_in_table():
     print("\nOCCUPIED TABLES:")
@@ -97,11 +66,11 @@ while True:
     else:
         break
 
-# # Writes to txt
-# with open("11-22-2017.txt","w") as file:
-#     for pt in tables:
-#         table_info = f"#{pt.number} - START: {format_time(pt.start_time)} - END: {format_time(pt.end_time)}\n"
-#         file.write(table_info)
+# Writes to txt
+with open("11-22-2017.txt","w") as file:
+    for pt in tables:
+        table_info = f"#{pt.number} - START: {format_time(pt.start_time)} - END: {format_time(pt.end_time)}\n"
+        file.write(table_info)
 
 # Writes to JSON
 array = []
