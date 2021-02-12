@@ -1,7 +1,13 @@
 from datetime import datetime
 import json
 tables = []
-fmt = '%H:%M:%S'
+fmt = '%S'
+
+# open json file
+# # ???? How can I open the .json before???
+# with open("11-22-2017.json","r") as file_object:
+#     tables = json.load(file_object)
+
 
 class PoolTable:
     def __init__(self,number):
@@ -22,10 +28,16 @@ class PoolTable:
     
     def total_time(self):
         return self.end_time - self.start_time
+    
+    # def current_time(self):
+    #     return datetime() - self.start_time
+    
+    # def cost_of_table(self):
+    #     return 30 * self.end_time - self.start_time
 
 def format_time(dt):
     if dt == None:
-        return "Time not started"
+        return "Unoccupied"
     else:
         return dt.strftime(fmt)
 
@@ -34,26 +46,40 @@ def check_out_table():
     for table in tables:
         if table.is_occupied == False:
             print(f"Table {table.number}")
-    ask = int(input("\nChoose a table: "))
+    ask = int(input("\nChoose a table to check out: "))
     table = tables[ask-1]
-    table.check_out()
+    if table.is_occupied == True:
+        print(f"Pool Table {table.number} is currently occupied")
+    else:
+        table.check_out()
+        #print(table.total_time())
 
 def check_in_table():
     print("\nOCCUPIED TABLES:")
     for table in tables:
         if table.is_occupied == True:
             print(f"Table {table.number}")
-    ask = int(input("\nChoose a table: "))
+    ask = int(input("\nChoose a table to check in: "))
     table = tables[ask-1]
-    table.check_in()
-    print(f"Table {table.number} - Total Time: {table.total_time()}")
+    if table.is_occupied == False:
+        print("Pool table was never occupied")
+    else:
+        table.check_in()
+        print(f"\nTable {table.number} has been checked in. Total Time: ")
+        print(format_time(table.start_time))
+        print(format_time(table.end_time))
+        print(table.total_time())
 
 def view_all_tables():
     print("\nALL TABLES:")
     for table in tables:
-        print(f"Table {table.number} - Occupied: {table.is_occupied}")
+        if table.is_occupied == False:
+            print(f"Table {table.number}")
+        else:
+            # cost_of_table: unsupported operand type for * int and 
+            print(f"Table {table.number} is currently occupied")
 
-#  creates 12 tables
+# creates 12 tables
 for i in range (0,12):
     table = PoolTable(i+1)
     tables.append(table)
@@ -71,11 +97,11 @@ while True:
     else:
         break
 
-# Writes to txt
-with open("11-22-2017.txt","w") as file:
-    for pt in tables:
-        table_info = f"#{pt.number} - START: {format_time(pt.start_time)} - END: {format_time(pt.end_time)}\n"
-        file.write(table_info)
+# # Writes to txt
+# with open("11-22-2017.txt","w") as file:
+#     for pt in tables:
+#         table_info = f"#{pt.number} - START: {format_time(pt.start_time)} - END: {format_time(pt.end_time)}\n"
+#         file.write(table_info)
 
 # Writes to JSON
 array = []
@@ -84,7 +110,3 @@ with open("11-22-2017.json","w") as file_object:
         user = {"TableNo": table.number, "Start": format_time(table.start_time), "End": format_time(table.end_time)}
         array.append(user)
     json.dump(array,file_object)
-    
-
-
-
