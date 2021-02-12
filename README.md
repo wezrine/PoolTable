@@ -23,5 +23,6 @@ When (2) is selected, the app displays all occupied pool tables and asks for sel
 
 When (3) is selected, all tables with occupancy display the number, start time, total time played and cost. 
 
+All other options end the app and write to .json & .txt
 
 Currently the app is in working condition. I would like to format the time in a more efficient and user-friendly way. Also, the app could be improved by importing the file beforehand, so that it can act as a working database.
